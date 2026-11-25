@@ -1,6 +1,9 @@
 name: Publicar site
 
-on:`n  push:`n    branches: [main]`n  workflow_dispatch:
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -42,5 +45,6 @@ jobs:
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
+
 
 
