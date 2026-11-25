@@ -229,7 +229,6 @@
     <div class="marca">À Antiga <span>×</span> Worevi</div>
     <nav>
       <a href="#reels">Reels</a>
-      <a href="#videos">Vídeos</a>
       <a href="#fotos">Fotografias</a>
     </nav>
   </div>
@@ -252,23 +251,14 @@
     <div class="cab">
       <div>
         <h2>Reels finais</h2>
-        <p>Editados, com legendas, em vertical 4K — prontos a publicar no Instagram, Facebook e TikTok.</p>
+        <p>Os cinco reels finais, todos em vertical 4K. Cada um pode ser visto e descarregado separadamente no formato original.</p>
       </div>
       <div class="acoes" id="acoes-reels"></div>
     </div>
     <div class="grelha-videos" id="grelha-reels"></div>
   </section>
 
-  <section id="videos" class="wrap">
-    <div class="cab">
-      <div>
-        <h2>Vídeos originais</h2>
-        <p>Os brutos da câmara, sem edição e sem legendas, para guardarem no arquivo da casa.</p>
-      </div>
-      <div class="acoes" id="acoes-videos"></div>
-    </div>
-    <div class="grelha-videos" id="grelha-videos"></div>
-  </section>
+
 
   <section id="fotos" class="wrap">
     <div class="cab">
@@ -864,8 +854,8 @@ const DADOS = {
     },
     {
       "ficheiro": "a-antiga-video-01.mov",
-      "titulo": "Vídeo 01 — original da câmara",
-      "grupo": "bruto",
+      "titulo": "Reel 03 — final",
+      "grupo": "reel",
       "w": 2160,
       "h": 3840,
       "dur": 25.1,
@@ -876,8 +866,8 @@ const DADOS = {
     },
     {
       "ficheiro": "a-antiga-video-02.mov",
-      "titulo": "Vídeo 02 — original da câmara",
-      "grupo": "bruto",
+      "titulo": "Reel 04 — final",
+      "grupo": "reel",
       "w": 2160,
       "h": 3840,
       "dur": 17.4,
@@ -888,8 +878,8 @@ const DADOS = {
     },
     {
       "ficheiro": "a-antiga-video-03.mov",
-      "titulo": "Vídeo 03 — original da câmara",
-      "grupo": "bruto",
+      "titulo": "Reel 05 — final",
+      "grupo": "reel",
       "w": 2160,
       "h": 3840,
       "dur": 7.1,
@@ -908,8 +898,7 @@ const kb = b => b >= 1073741824 ? (b/1073741824).toFixed(2).replace('.',',')+' G
 const seg = s => { const m=Math.floor(s/60), r=Math.round(s%60); return m?`${m}m ${r}s`:`${r}s`; };
 const res = (w,h) => (w>=2000||h>=2000) ? '4K' : `${w}×${h}`;
 
-const reels = DADOS.videos.filter(v=>v.grupo==='reel');
-const brutos = DADOS.videos.filter(v=>v.grupo!=='reel');
+const reels = DADOS.videos;
 const fotos = DADOS.fotos;
 const bytesTotal = [...DADOS.videos,...fotos].reduce((a,x)=>a+x.bytes,0);
 
@@ -959,7 +948,6 @@ function cartaoVideo(v, selo){
   return el;
 }
 reels.forEach((v,i)=>$('#grelha-reels').appendChild(cartaoVideo(v,'Reel '+String(i+1).padStart(2,'0'))));
-brutos.forEach((v,i)=>$('#grelha-videos').appendChild(cartaoVideo(v,'Bruto '+String(i+1).padStart(2,'0'))));
 
 function botaoTudo(alvo, lista, texto){
   if(!lista.length) return;
@@ -969,7 +957,7 @@ function botaoTudo(alvo, lista, texto){
   $(alvo).appendChild(b);
 }
 botaoTudo('#acoes-reels', reels, 'Descarregar os '+reels.length+' reels');
-botaoTudo('#acoes-videos', brutos, 'Descarregar os '+brutos.length+' vídeos');
+
 
 /* ---------- fotos ---------- */
 const marcadas = new Set();
@@ -1055,5 +1043,4 @@ document.addEventListener('keydown',e=>{
 </script>
 </body>
 </html>
-
 
