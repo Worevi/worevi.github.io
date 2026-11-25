@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À Antiga × Worevi — Entrega final</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Fotografias e vídeos finais da À Antiga, prontos a descarregar na qualidade original.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta:#1a1512;
+    --tinta-2:#2a2320;
+    --papel:#f6f1e9;
+    --papel-2:#efe7db;
+    --crosta:#b4641f;
+    --crosta-claro:#d98b3f;
+    --linha:rgba(26,21,18,.12);
+    --suave:rgba(26,21,18,.55);
+    --raio:14px;
+    --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--papel);color:var(--tinta);
+    font-family:var(--sans);font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,video{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+
+  /* ---------- topo ---------- */
+  header.topo{
+    position:sticky;top:0;z-index:40;
+    background:rgba(246,241,233,.82);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--linha);
+  }
+  .topo .wrap{display:flex;align-items:center;gap:20px;height:62px}
+  .marca{font-family:var(--serif);font-size:21px;letter-spacing:.01em;white-space:nowrap}
+  .marca span{color:var(--crosta)}
+  .topo nav{margin-left:auto;display:flex;gap:4px;align-items:center}
+  .topo nav a{
+    text-decoration:none;font-size:13.5px;color:var(--suave);
+    padding:7px 12px;border-radius:999px;transition:.18s;
+  }
+  .topo nav a:hover{color:var(--tinta);background:var(--papel-2)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:72px 0 44px}
+  .etiqueta{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11.5px;text-transform:uppercase;letter-spacing:.14em;
+    color:var(--crosta);font-weight:600;margin-bottom:22px;
+  }
+  .etiqueta::before{content:"";width:22px;height:1px;background:var(--crosta)}
+  .hero h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(38px,6.4vw,74px);line-height:1.04;
+    margin:0 0 20px;letter-spacing:-.015em;max-width:17ch;
+  }
+  .hero h1 em{font-style:italic;color:var(--crosta)}
+  .hero p.intro{font-size:17.5px;color:var(--suave);max-width:58ch;margin:0 0 34px}
+  .numeros{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--linha);padding-top:26px}
+  .numeros div{padding-right:46px;margin-right:46px;border-right:1px solid var(--linha)}
+  .numeros div:last-child{border-right:0;margin-right:0;padding-right:0}
+  .numeros b{display:block;font-family:var(--serif);font-size:38px;font-weight:400;line-height:1}
+  .numeros small{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--suave)}
+
+  /* ---------- aviso qualidade ---------- */
+  .qualidade{
+    margin:40px 0 0;padding:20px 24px;border-radius:var(--raio);
+    background:var(--papel-2);border:1px solid var(--linha);
+    display:flex;gap:16px;align-items:flex-start;
+  }
+  .qualidade svg{flex:none;margin-top:3px;color:var(--crosta)}
+  .qualidade p{margin:0;font-size:14.5px;color:var(--tinta-2)}
+  .qualidade strong{font-weight:600}
+
+  /* ---------- secções ---------- */
+  section{padding:64px 0 10px}
+  .cab{display:flex;align-items:flex-end;gap:24px;margin-bottom:30px;flex-wrap:wrap}
+  .cab h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.4vw,42px);margin:0;letter-spacing:-.01em}
+  .cab p{margin:0;color:var(--suave);font-size:14.5px;max-width:46ch}
+  .cab .acoes{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+
+  /* ---------- botões ---------- */
+  .btn{
+    appearance:none;border:0;cursor:pointer;font-family:var(--sans);
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-size:13.5px;font-weight:500;padding:11px 18px;border-radius:999px;
+    text-decoration:none;transition:.18s;white-space:nowrap;
+  }
+  .btn-cheio{background:var(--tinta);color:var(--papel)}
+  .btn-cheio:hover{background:var(--crosta)}
+  .btn-linha{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--linha)}
+  .btn-linha:hover{background:var(--papel-2);box-shadow:inset 0 0 0 1px rgba(26,21,18,.28)}
+  .btn svg{flex:none}
+
+  /* ---------- vídeos ---------- */
+  .grelha-videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:22px}
+  .cartao-video{
+    background:#fff;border:1px solid var(--linha);border-radius:var(--raio);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .palco{position:relative;background:#120f0d;aspect-ratio:9/16}
+  .palco video,.palco img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .play{
+    position:absolute;inset:0;display:grid;place-items:center;border:0;
+    background:linear-gradient(to top,rgba(0,0,0,.45),rgba(0,0,0,.05));cursor:pointer;
+  }
+  .play i{
+    width:52px;height:52px;border-radius:50%;background:rgba(246,241,233,.94);
+    display:grid;place-items:center;transition:.2s;
+  }
+  .play:hover i{transform:scale(1.08);background:#fff}
+  .play svg{color:var(--tinta);margin-left:2px}
+  .selo{
+    position:absolute;top:10px;left:10px;z-index:2;
+    font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(246,241,233,.92);color:var(--tinta);padding:5px 9px;border-radius:999px;
+  }
+  .corpo-video{padding:15px 16px 16px}
+  .corpo-video h3{margin:0 0 4px;font-size:14.5px;font-weight:600}
+  .corpo-video .meta{font-size:12px;color:var(--suave);margin:0 0 13px;font-variant-numeric:tabular-nums}
+  .corpo-video .btn{width:100%}
+
+  /* ---------- fotos ---------- */
+  .grelha-fotos{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));
+    gap:12px;
+  }
+  .foto{
+    position:relative;border-radius:10px;overflow:hidden;background:var(--papel-2);
+    aspect-ratio:1/1;border:1px solid var(--linha);
+  }
+  .foto>img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .foto:hover>img{transform:scale(1.04)}
+  .foto .barra{
+    position:absolute;inset:auto 0 0 0;padding:28px 10px 10px;
+    background:linear-gradient(to top,rgba(0,0,0,.6),transparent);
+    display:flex;align-items:center;gap:8px;
+    opacity:0;transition:.2s;pointer-events:none;
+  }
+  .foto:hover .barra,.foto.marcada .barra{opacity:1;pointer-events:auto}
+  .foto .nome{font-size:11px;color:#fff;opacity:.88;font-variant-numeric:tabular-nums}
+  .foto .baixar{
+    margin-left:auto;width:30px;height:30px;border-radius:50%;border:0;cursor:pointer;
+    background:rgba(246,241,233,.95);display:grid;place-items:center;color:var(--tinta);
+  }
+  .foto .baixar:hover{background:#fff}
+  .foto .caixa{
+    position:absolute;top:9px;left:9px;z-index:3;width:24px;height:24px;border-radius:7px;
+    background:rgba(18,15,13,.42);border:1.5px solid rgba(255,255,255,.75);cursor:pointer;
+    display:grid;place-items:center;opacity:0;transition:.18s;
+  }
+  .foto:hover .caixa,.foto.marcada .caixa{opacity:1}
+  .foto.marcada .caixa{background:var(--crosta);border-color:var(--crosta)}
+  .foto.marcada{outline:2px solid var(--crosta);outline-offset:-2px}
+  .foto .caixa svg{color:#fff;opacity:0}
+  .foto.marcada .caixa svg{opacity:1}
+
+  /* ---------- barra de seleção ---------- */
+  .barra-sel{
+    position:fixed;left:50%;bottom:22px;transform:translate(-50%,130%);
+    z-index:60;background:var(--tinta);color:var(--papel);
+    border-radius:999px;padding:10px 12px 10px 22px;
+    display:flex;align-items:center;gap:16px;
+    box-shadow:0 18px 50px rgba(26,21,18,.3);transition:transform .32s cubic-bezier(.2,.9,.2,1);
+  }
+  .barra-sel.visivel{transform:translate(-50%,0)}
+  .barra-sel span{font-size:13.5px;white-space:nowrap}
+  .barra-sel .btn-cheio{background:var(--papel);color:var(--tinta)}
+  .barra-sel .btn-cheio:hover{background:var(--crosta-claro);color:var(--tinta)}
+  .barra-sel .limpar{background:transparent;color:rgba(246,241,233,.6);box-shadow:none;padding:11px 8px}
+  .barra-sel .limpar:hover{color:var(--papel);background:transparent}
+
+  /* ---------- lightbox ---------- */
+  .lupa{
+    position:fixed;inset:0;z-index:90;background:rgba(18,15,13,.94);
+    display:none;align-items:center;justify-content:center;padding:28px;
+  }
+  .lupa.aberta{display:flex}
+  .lupa img,.lupa video{max-width:100%;max-height:calc(100vh - 150px);object-fit:contain;border-radius:6px}
+  .lupa .rodape{
+    position:absolute;left:0;right:0;bottom:0;padding:18px 24px;
+    display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;
+  }
+  .lupa .rodape .info{color:rgba(246,241,233,.68);font-size:12.5px;font-variant-numeric:tabular-nums}
+  .lupa .rodape .btn-cheio{background:var(--papel);color:var(--tinta)}
+  .lupa .fechar,.lupa .nav{
+    position:absolute;border:0;background:rgba(246,241,233,.1);color:var(--papel);
+    width:44px;height:44px;border-radius:50%;cursor:pointer;display:grid;place-items:center;
+    transition:.18s;
+  }
+  .lupa .fechar:hover,.lupa .nav:hover{background:rgba(246,241,233,.22)}
+  .lupa .fechar{top:20px;right:22px}
+  .lupa .nav.ant{left:18px;top:50%;margin-top:-22px}
+  .lupa .nav.seg{right:18px;top:50%;margin-top:-22px}
+  .lupa .carregar{position:absolute;color:rgba(246,241,233,.5);font-size:13px}
+
+  /* ---------- rodapé ---------- */
+  footer{margin-top:84px;border-top:1px solid var(--linha);padding:40px 0 56px}
+  footer .wrap{display:flex;gap:26px;flex-wrap:wrap;align-items:baseline}
+  footer p{margin:0;font-size:13px;color:var(--suave)}
+  footer .fim{font-family:var(--serif);font-size:19px;color:var(--tinta)}
+  footer a{color:var(--crosta);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  @media (max-width:640px){
+    .hero{padding:48px 0 32px}
+    .numeros div{padding-right:26px;margin-right:26px}
+    .numeros b{font-size:30px}
+    .grelha-fotos{grid-template-columns:repeat(auto-fill,minmax(136px,1fr));gap:8px}
+    .grelha-videos{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+    .lupa .nav{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <div class="marca">À Antiga <span>×</span> Worevi</div>
+    <nav>
+      <a href="#reels">Reels</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#fotos">Fotografias</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="etiqueta">Entrega final · Novembro 2026</div>
+    <h1>O trabalho está pronto. <em>Levem-no.</em></h1>
+    <p class="intro">Diogo e Tiago — aqui ficam todas as fotografias e vídeos da sessão na À Antiga. Descarreguem o que quiserem, quando quiserem. Os ficheiros são vossos.</p>
+    <div class="numeros" id="numeros"></div>
+
+    <div class="qualidade">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+      <p><strong>Qualidade original, sem exceções.</strong> O que vêem nesta página é uma pré-visualização leve, para a página abrir depressa. Cada download entrega o ficheiro original tal como saiu da câmara e da edição — 4K nos vídeos, resolução máxima nas fotografias, sem nova compressão.</p>
+    </div>
+  </div>
+
+  <section id="reels" class="wrap">
+    <div class="cab">
+      <div>
+        <h2>Reels finais</h2>
+        <p>Editados, com legendas, em vertical 4K — prontos a publicar no Instagram, Facebook e TikTok.</p>
+      </div>
+      <div class="acoes" id="acoes-reels"></div>
+    </div>
+    <div class="grelha-videos" id="grelha-reels"></div>
+  </section>
+
+  <section id="videos" class="wrap">
+    <div class="cab">
+      <div>
+        <h2>Vídeos originais</h2>
+        <p>Os brutos da câmara, sem edição e sem legendas, para guardarem no arquivo da casa.</p>
+      </div>
+      <div class="acoes" id="acoes-videos"></div>
+    </div>
+    <div class="grelha-videos" id="grelha-videos"></div>
+  </section>
+
+  <section id="fotos" class="wrap">
+    <div class="cab">
+      <div>
+        <h2>Fotografias</h2>
+        <p>Cliquem numa fotografia para a ver grande. Marquem as que querem e descarreguem de uma vez.</p>
+      </div>
+      <div class="acoes">
+        <button class="btn btn-linha" id="marcar-todas">Marcar todas</button>
+        <button class="btn btn-cheio" id="baixar-todas">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          Descarregar todas
+        </button>
+      </div>
+    </div>
+    <div class="grelha-fotos" id="grelha-fotos"></div>
+  </section>
+</main>
+
+<div class="barra-sel" id="barra-sel">
+  <span id="texto-sel">0 marcadas</span>
+  <button class="btn btn-cheio" id="baixar-marcadas">Descarregar marcadas</button>
+  <button class="btn limpar" id="limpar-sel">Limpar</button>
+</div>
+
+<div class="lupa" id="lupa" role="dialog" aria-modal="true" aria-label="Pré-visualização">
+  <button class="fechar" id="lupa-fechar" aria-label="Fechar">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="nav ant" id="lupa-ant" aria-label="Anterior">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+  <button class="nav seg" id="lupa-seg" aria-label="Seguinte">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+  <div id="lupa-palco"><span class="carregar">a abrir…</span></div>
+  <div class="rodape">
+    <span class="info" id="lupa-info"></span>
+    <a class="btn btn-cheio" id="lupa-baixar" download>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+      Descarregar original
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="fim">Feito com calma pela Worevi.</p>
+    <p>Dúvidas, mais formatos ou outra versão? Falem connosco — <a href="mailto:geral@worevi.com">geral@worevi.com</a> · <a href="tel:+351910861499">910 861 499</a></p>
+  </div>
+</footer>
+
+<script>
+const DADOS = {
+  "fotos": [
+    {
+      "ficheiro": "a-antiga-foto-01.jpg",
+      "w": 900,
+      "h": 600,
+      "bytes": 9399847,
+      "thumb": "thumbs/a-antiga-foto-01.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-02.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9947770,
+      "thumb": "thumbs/a-antiga-foto-02.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-03.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10064051,
+      "thumb": "thumbs/a-antiga-foto-03.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-04.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 7842870,
+      "thumb": "thumbs/a-antiga-foto-04.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-05.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 7436786,
+      "thumb": "thumbs/a-antiga-foto-05.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-06.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 7249805,
+      "thumb": "thumbs/a-antiga-foto-06.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-07.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 7432128,
+      "thumb": "thumbs/a-antiga-foto-07.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-08.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 7558566,
+      "thumb": "thumbs/a-antiga-foto-08.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-09.png",
+      "w": 604,
+      "h": 900,
+      "bytes": 19583656,
+      "thumb": "thumbs/a-antiga-foto-09.webp",
+      "ext": "PNG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-10.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9261669,
+      "thumb": "thumbs/a-antiga-foto-10.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-11.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8944424,
+      "thumb": "thumbs/a-antiga-foto-11.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-12.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10365962,
+      "thumb": "thumbs/a-antiga-foto-12.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-13.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10151528,
+      "thumb": "thumbs/a-antiga-foto-13.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-14.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10151684,
+      "thumb": "thumbs/a-antiga-foto-14.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-15.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8450405,
+      "thumb": "thumbs/a-antiga-foto-15.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-16.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 5278559,
+      "thumb": "thumbs/a-antiga-foto-16.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-17.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 6127966,
+      "thumb": "thumbs/a-antiga-foto-17.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-18.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9124984,
+      "thumb": "thumbs/a-antiga-foto-18.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-19.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 6598656,
+      "thumb": "thumbs/a-antiga-foto-19.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-20.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8988223,
+      "thumb": "thumbs/a-antiga-foto-20.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-21.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8899937,
+      "thumb": "thumbs/a-antiga-foto-21.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-22.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9369169,
+      "thumb": "thumbs/a-antiga-foto-22.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-23.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8899829,
+      "thumb": "thumbs/a-antiga-foto-23.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-24.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 3429251,
+      "thumb": "thumbs/a-antiga-foto-24.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-25.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8524342,
+      "thumb": "thumbs/a-antiga-foto-25.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-26.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8577851,
+      "thumb": "thumbs/a-antiga-foto-26.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-27.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9470190,
+      "thumb": "thumbs/a-antiga-foto-27.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-28.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10439250,
+      "thumb": "thumbs/a-antiga-foto-28.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-29.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10356851,
+      "thumb": "thumbs/a-antiga-foto-29.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-30.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9390131,
+      "thumb": "thumbs/a-antiga-foto-30.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-31.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10344484,
+      "thumb": "thumbs/a-antiga-foto-31.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-32.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9093230,
+      "thumb": "thumbs/a-antiga-foto-32.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-33.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9785312,
+      "thumb": "thumbs/a-antiga-foto-33.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-34.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9288081,
+      "thumb": "thumbs/a-antiga-foto-34.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-35.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9277617,
+      "thumb": "thumbs/a-antiga-foto-35.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-36.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8433307,
+      "thumb": "thumbs/a-antiga-foto-36.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-37.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9269530,
+      "thumb": "thumbs/a-antiga-foto-37.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-38.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9296383,
+      "thumb": "thumbs/a-antiga-foto-38.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-39.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9188122,
+      "thumb": "thumbs/a-antiga-foto-39.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-40.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 19391458,
+      "thumb": "thumbs/a-antiga-foto-40.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-41.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10257366,
+      "thumb": "thumbs/a-antiga-foto-41.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-42.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8990645,
+      "thumb": "thumbs/a-antiga-foto-42.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-43.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10380943,
+      "thumb": "thumbs/a-antiga-foto-43.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-44.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8280884,
+      "thumb": "thumbs/a-antiga-foto-44.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-45.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10348236,
+      "thumb": "thumbs/a-antiga-foto-45.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-46.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10945330,
+      "thumb": "thumbs/a-antiga-foto-46.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-47.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 10943597,
+      "thumb": "thumbs/a-antiga-foto-47.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-48.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 19090044,
+      "thumb": "thumbs/a-antiga-foto-48.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-49.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9906797,
+      "thumb": "thumbs/a-antiga-foto-49.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-50.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9643718,
+      "thumb": "thumbs/a-antiga-foto-50.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-51.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 7840310,
+      "thumb": "thumbs/a-antiga-foto-51.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-52.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8721536,
+      "thumb": "thumbs/a-antiga-foto-52.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-53.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 7880321,
+      "thumb": "thumbs/a-antiga-foto-53.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-54.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9358683,
+      "thumb": "thumbs/a-antiga-foto-54.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-55.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8991065,
+      "thumb": "thumbs/a-antiga-foto-55.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-56.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8642460,
+      "thumb": "thumbs/a-antiga-foto-56.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-57.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9868938,
+      "thumb": "thumbs/a-antiga-foto-57.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-58.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9242408,
+      "thumb": "thumbs/a-antiga-foto-58.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-59.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9647071,
+      "thumb": "thumbs/a-antiga-foto-59.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-60.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 9166527,
+      "thumb": "thumbs/a-antiga-foto-60.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-61.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 12369500,
+      "thumb": "thumbs/a-antiga-foto-61.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-62.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 12363057,
+      "thumb": "thumbs/a-antiga-foto-62.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-63.jpg",
+      "w": 600,
+      "h": 900,
+      "bytes": 8967369,
+      "thumb": "thumbs/a-antiga-foto-63.webp",
+      "ext": "JPG"
+    },
+    {
+      "ficheiro": "a-antiga-foto-64.jpg",
+      "w": 592,
+      "h": 900,
+      "bytes": 10395714,
+      "thumb": "thumbs/a-antiga-foto-64.webp",
+      "ext": "JPG"
+    }
+  ],
+  "videos": [
+    {
+      "ficheiro": "a-antiga-reel-01.mp4",
+      "titulo": "Reel 01 — com legendas",
+      "grupo": "reel",
+      "w": 2160,
+      "h": 3840,
+      "dur": 23.1,
+      "bytes": 111650001,
+      "poster": "thumbs/a-antiga-reel-01.jpg",
+      "preview": "preview/a-antiga-reel-01.mp4",
+      "ext": "MP4"
+    },
+    {
+      "ficheiro": "a-antiga-reel-02.mp4",
+      "titulo": "Reel 02 — com legendas",
+      "grupo": "reel",
+      "w": 2160,
+      "h": 3840,
+      "dur": 20.7,
+      "bytes": 130400702,
+      "poster": "thumbs/a-antiga-reel-02.jpg",
+      "preview": "preview/a-antiga-reel-02.mp4",
+      "ext": "MP4"
+    },
+    {
+      "ficheiro": "a-antiga-video-01.mov",
+      "titulo": "Vídeo 01 — original da câmara",
+      "grupo": "bruto",
+      "w": 2160,
+      "h": 3840,
+      "dur": 25.1,
+      "bytes": 140396615,
+      "poster": "thumbs/a-antiga-video-01.jpg",
+      "preview": "preview/a-antiga-video-01.mp4",
+      "ext": "MOV"
+    },
+    {
+      "ficheiro": "a-antiga-video-02.mov",
+      "titulo": "Vídeo 02 — original da câmara",
+      "grupo": "bruto",
+      "w": 2160,
+      "h": 3840,
+      "dur": 17.4,
+      "bytes": 99536922,
+      "poster": "thumbs/a-antiga-video-02.jpg",
+      "preview": "preview/a-antiga-video-02.mp4",
+      "ext": "MOV"
+    },
+    {
+      "ficheiro": "a-antiga-video-03.mov",
+      "titulo": "Vídeo 03 — original da câmara",
+      "grupo": "bruto",
+      "w": 2160,
+      "h": 3840,
+      "dur": 7.1,
+      "bytes": 41391869,
+      "poster": "thumbs/a-antiga-video-03.jpg",
+      "preview": "preview/a-antiga-video-03.mp4",
+      "ext": "MOV"
+    }
+  ]
+};
+
+const $ = (s,r=document)=>r.querySelector(s);
+const kb = b => b >= 1073741824 ? (b/1073741824).toFixed(2).replace('.',',')+' GB'
+             : b >= 1048576 ? Math.round(b/1048576)+' MB'
+             : Math.round(b/1024)+' KB';
+const seg = s => { const m=Math.floor(s/60), r=Math.round(s%60); return m?`${m}m ${r}s`:`${r}s`; };
+const res = (w,h) => (w>=2000||h>=2000) ? '4K' : `${w}×${h}`;
+
+const reels = DADOS.videos.filter(v=>v.grupo==='reel');
+const brutos = DADOS.videos.filter(v=>v.grupo!=='reel');
+const fotos = DADOS.fotos;
+const bytesTotal = [...DADOS.videos,...fotos].reduce((a,x)=>a+x.bytes,0);
+
+/* ---------- números ---------- */
+$('#numeros').innerHTML = [
+  [fotos.length,'fotografias'],
+  [DADOS.videos.length,'vídeos'],
+  ['4K','resolução'],
+  [kb(bytesTotal),'no total']
+].map(([b,s])=>`<div><b>${b}</b><small>${s}</small></div>`).join('');
+
+/* ---------- descarregar ---------- */
+function baixar(ficheiro){
+  const a = document.createElement('a');
+  a.href = 'https://github.com/Worevi/worevi.github.io/releases/download/a-antiga-entrega-2026-11-25/'+ficheiro;
+  a.download = ficheiro;
+  document.body.appendChild(a); a.click(); a.remove();
+}
+async function baixarVarios(lista){
+  for (const f of lista){ baixar(f); await new Promise(r=>setTimeout(r,650)); }
+}
+
+/* ---------- cartões de vídeo ---------- */
+function cartaoVideo(v, selo){
+  const el = document.createElement('article');
+  el.className = 'cartao-video';
+  el.innerHTML = `
+    <div class="palco">
+      <span class="selo">${selo}</span>
+      <img src="${v.poster}" alt="Primeiro fotograma de ${v.titulo}" loading="lazy" decoding="async">
+      <button class="play" aria-label="Ver pré-visualização de ${v.titulo}">
+        <i><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i>
+      </button>
+    </div>
+    <div class="corpo-video">
+      <h3>${v.titulo}</h3>
+      <p class="meta">${res(v.w,v.h)} · ${seg(v.dur)} · ${v.ext} · ${kb(v.bytes)}</p>
+      <a class="btn btn-cheio" href="https://github.com/Worevi/worevi.github.io/releases/download/a-antiga-entrega-2026-11-25/${v.ficheiro}" download="${v.ficheiro}">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        Descarregar original
+      </a>
+    </div>`;
+  $('.play',el).addEventListener('click',()=>{
+    const palco = $('.palco',el);
+    palco.innerHTML = `<video src="${v.preview}" controls autoplay playsinline preload="metadata" poster="${v.poster}"></video>`;
+  });
+  return el;
+}
+reels.forEach((v,i)=>$('#grelha-reels').appendChild(cartaoVideo(v,'Reel '+String(i+1).padStart(2,'0'))));
+brutos.forEach((v,i)=>$('#grelha-videos').appendChild(cartaoVideo(v,'Bruto '+String(i+1).padStart(2,'0'))));
+
+function botaoTudo(alvo, lista, texto){
+  if(!lista.length) return;
+  const b = document.createElement('button');
+  b.className='btn btn-linha'; b.textContent = texto;
+  b.addEventListener('click',()=>baixarVarios(lista.map(v=>v.ficheiro)));
+  $(alvo).appendChild(b);
+}
+botaoTudo('#acoes-reels', reels, 'Descarregar os '+reels.length+' reels');
+botaoTudo('#acoes-videos', brutos, 'Descarregar os '+brutos.length+' vídeos');
+
+/* ---------- fotos ---------- */
+const marcadas = new Set();
+const grelha = $('#grelha-fotos');
+fotos.forEach((f,i)=>{
+  const el = document.createElement('figure');
+  el.className='foto'; el.dataset.i = i; el.style.margin='0';
+  el.innerHTML = `
+    <button class="caixa" aria-label="Marcar ${f.ficheiro}" aria-pressed="false">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+    </button>
+    <img src="${f.thumb}" width="${f.w}" height="${f.h}" alt="Fotografia ${i+1} da À Antiga" loading="lazy" decoding="async">
+    <div class="barra">
+      <span class="nome">${kb(f.bytes)} · ${f.ext}</span>
+      <button class="baixar" aria-label="Descarregar ${f.ficheiro}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+      </button>
+    </div>`;
+  $('img',el).addEventListener('click',()=>abrirLupa(i));
+  $('.baixar',el).addEventListener('click',e=>{e.stopPropagation();baixar(f.ficheiro);});
+  $('.caixa',el).addEventListener('click',e=>{
+    e.stopPropagation();
+    const on = !marcadas.has(i);
+    on ? marcadas.add(i) : marcadas.delete(i);
+    el.classList.toggle('marcada',on);
+    $('.caixa',el).setAttribute('aria-pressed',on);
+    pintaBarra();
+  });
+  grelha.appendChild(el);
+});
+
+function pintaBarra(){
+  const n = marcadas.size;
+  $('#barra-sel').classList.toggle('visivel', n>0);
+  $('#texto-sel').textContent = n===1 ? '1 fotografia marcada' : n+' fotografias marcadas';
+  $('#marcar-todas').textContent = n===fotos.length ? 'Desmarcar todas' : 'Marcar todas';
+}
+$('#marcar-todas').addEventListener('click',()=>{
+  const tudo = marcadas.size !== fotos.length;
+  marcadas.clear();
+  grelha.querySelectorAll('.foto').forEach((el,i)=>{
+    el.classList.toggle('marcada',tudo);
+    $('.caixa',el).setAttribute('aria-pressed',tudo);
+    if(tudo) marcadas.add(i);
+  });
+  pintaBarra();
+});
+$('#limpar-sel').addEventListener('click',()=>{
+  marcadas.clear();
+  grelha.querySelectorAll('.foto').forEach(el=>{el.classList.remove('marcada');$('.caixa',el).setAttribute('aria-pressed',false);});
+  pintaBarra();
+});
+$('#baixar-marcadas').addEventListener('click',()=>baixarVarios([...marcadas].sort((a,b)=>a-b).map(i=>fotos[i].ficheiro)));
+$('#baixar-todas').addEventListener('click',()=>baixarVarios(fotos.map(f=>f.ficheiro)));
+
+/* ---------- lightbox ---------- */
+let atual = -1;
+const lupa = $('#lupa');
+function abrirLupa(i){
+  atual = (i + fotos.length) % fotos.length;
+  const f = fotos[atual];
+  $('#lupa-palco').innerHTML = `<span class="carregar">a abrir o original…</span>`;
+  const img = new Image();
+  img.alt = 'Fotografia '+(atual+1)+' da À Antiga';
+  img.src = 'https://github.com/Worevi/worevi.github.io/releases/download/a-antiga-entrega-2026-11-25/'+f.ficheiro;
+  img.onload = ()=>{ if(atual===i||true) $('#lupa-palco').replaceChildren(img); };
+  $('#lupa-info').textContent = `${atual+1} / ${fotos.length} · ${f.ext} · ${kb(f.bytes)}`;
+  const a = $('#lupa-baixar'); a.href = 'https://github.com/Worevi/worevi.github.io/releases/download/a-antiga-entrega-2026-11-25/'+f.ficheiro; a.download = f.ficheiro;
+  lupa.classList.add('aberta');
+  document.body.style.overflow='hidden';
+}
+function fecharLupa(){ lupa.classList.remove('aberta'); document.body.style.overflow=''; atual=-1; }
+$('#lupa-fechar').addEventListener('click',fecharLupa);
+$('#lupa-ant').addEventListener('click',()=>abrirLupa(atual-1));
+$('#lupa-seg').addEventListener('click',()=>abrirLupa(atual+1));
+lupa.addEventListener('click',e=>{ if(e.target===lupa) fecharLupa(); });
+document.addEventListener('keydown',e=>{
+  if(!lupa.classList.contains('aberta')) return;
+  if(e.key==='Escape') fecharLupa();
+  if(e.key==='ArrowLeft') abrirLupa(atual-1);
+  if(e.key==='ArrowRight') abrirLupa(atual+1);
+});
+</script>
+</body>
+</html>
+
+
