@@ -2,12 +2,6 @@
 
 <img src=".github/banner.svg" alt="À Antiga — página pública de entrega do material final" width="100%">
 
-<br>
-
-<img src="https://img.shields.io/badge/GitHub-Pages-1d1d1f?logo=github&logoColor=white" alt="GitHub Pages">
-<img src="https://img.shields.io/badge/HTML-est%C3%A1tico-1d1d1f?logo=html5&logoColor=E34F26" alt="HTML estático">
-
-
 [worevi.github.io](https://worevi.github.io)
 
 </div>
